@@ -1,3 +1,9 @@
+# graphite mod of urob's zmk-config
+
+designed for fuji44 by oumae.
+
+original README follows:
+
 # urob's zmk-config
 
 This is my personal [ZMK firmware](https://github.com/zmkfirmware/zmk/)

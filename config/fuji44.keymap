@@ -222,12 +222,21 @@ ZMK_TAP_DANCE(copy_cut, bindings = <&kp LC(INS)>, <&kp LC(X)>;
 // Sticky shift + leader.
 ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
 
-// Misc aliases. [TODO: clean up]
-#define CANCEL      &kp  K_CANCEL            // Cancel caps-word & auto-layers.
-#define DSK_PREV    &hmr LCTRL LG(LS(LEFT)) // Previous workspace.
-#define DSK_NEXT    &hmr LALT LG(LS(RIGHT)) // Next     workspace.
-#define DSK_SCRATCH &hmr RSHIFT LG(S)
-#define DSK_CLOSE   &kp  LG(X)
+// Misc aliases. 
+#define CANCEL      &kp  K_CANCEL           // cancel caps-word & auto-layers.
+
+// hyprland
+#define DSK_PREV    &hmr LCTRL LG(LS(LEFT)) // previous workspace
+#define DSK_NEXT    &hmr LALT LG(LS(RIGHT)) // next     workspace
+#define DSK_SCRATCH &hmr RSHIFT LG(S)       // scratch  workspace
+#define DSK_CLOSE   &kp  LG(X)              // close    window
+#define FLOATING    &kp  LG(LS(O))          // toggle   floating
+#define SPLIT       &kp  LG(LS(I))          // toggle   split
+
+// screenshots (works on mac too)
+#define SCSH_W      &kp  LG(LS(3))          // screenshot window
+#define SCSH_R      &kp  LG(LS(4))          // screenshot region
+#define SCSH_A      &kp  LG(LS(5))          // screenshot with annotation
 
 /* Keymap */
 
@@ -239,10 +248,10 @@ ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS) // FN + NUM --> SYS.
 #endif
 
 ZMK_BASE_LAYER(Base,
-  &kp ESC     &kp Q         &kp W         &kp F         &kp P         &kp B       ,   &kp J         &kp L         &kp U         &kp Y         &kp SQT     &kp DEL ,
-  &kp LCTRL   &hml LGUI A   &hml LALT R   &hml LSHFT S  &hml LCTRL T  &kp G       ,   &kp M         &hmr LCTRL N  &hmr RSHFT E  &hmr LALT I   &hmr LGUI O &kp BSPC ,
-  &kp LSHIFT  &kp Z         &kp X         &kp C         &kp D         &kp V       ,   &kp K         &kp H         &comma_morph  &dot_morph    &qexcl      &kp GRAVE ,
-                        	&kp LG(M)     &kp LGUI      &lt_spc NAV 0 &lt FN RET  ,   SMART_NUM     MAGIC_SHIFT   &smart_mouse  &kp LG(S)
+  &kp ESC     &kp B         &kp L         &kp D         &kp W         &kp Z       ,   &kp SQT       &kp F         &kp O         &kp U         &kp J       &kp DEL ,
+  &kp LCTRL   &hml LGUI N   &hml LALT R   &hml LSHFT T  &hml LCTRL S  &kp G       ,   &kp Y         &hmr LCTRL H  &hmr RSHFT A  &hmr LALT E   &hmr LGUI I &kp BSPC ,
+  &kp LSHIFT  &kp Q         &kp X         &kp M         &kp C         &kp V       ,   &kp K         &kp P         &comma_morph  &dot_morph    &qexcl      &kp GRAVE ,
+                        	&kp F11       &kp LGUI      &lt_spc NAV 0 &lt FN RET  ,   SMART_NUM     MAGIC_SHIFT   &smart_mouse  &kp F12
 )
 
 ZMK_BASE_LAYER(Nav,
@@ -253,10 +262,10 @@ ZMK_BASE_LAYER(Nav,
 )
 
 ZMK_BASE_LAYER(Fn,
-    ___           &kp F12       &kp F7        &kp F8        &kp F9        ___         ,   &kp C_VOL_UP    &kp F1        &kp F2        &kp F3        &kp F4     ___     ,
-    ___           &hml LGUI F11 &hml LALT F4  &hml LSHFT F5 &hml LCTRL F6 ___         ,   &kp C_NEXT      DSK_PREV      DSK_SCRATCH   DSK_NEXT      DSK_CLOSE  ___     ,
-    ___           &kp F10       &kp F1        &kp F2        &kp F3        ___         ,   &kp C_VOL_DN    ___           ___           ___           ___        ___     ,
-                                ___           ___           ___           ___         ,   &kp C_MUTE      &kp C_PP      ___           ___
+    ___           &kp F8        &kp F7        &kp F6         &kp F5        ___         ,   &kp C_VOL_UP    &kp F1        &kp F2        &kp F3        &kp F4     ___     ,
+    ___           &hml LGUI F12 &hml LALT F11 &hml LSHFT F10 &hml LCTRL F9 ___         ,   &kp C_PP        DSK_PREV      DSK_SCRATCH   DSK_NEXT      DSK_CLOSE  ___     ,
+    ___           ___           SCSH_A        SCSH_R         SCSH_W        ___         ,   &kp C_VOL_DN    SPLIT         FLOATING      ___           ___        ___     ,
+                                ___           ___            ___           ___         ,   &kp C_MUTE      &kp C_NEXT    ___           ___
 )
 
 ZMK_BASE_LAYER(Num,
