@@ -232,11 +232,12 @@ ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
 #define DSK_CLOSE   &kp  LG(X)              // close    window
 #define FLOATING    &kp  LG(LS(O))          // toggle   floating
 #define SPLIT       &kp  LG(LS(I))          // toggle   split
+#define MINIM       &kp  LG(LS(M))          // minimize window
 
 // screenshots (works on mac too)
-#define SCSH_W      &kp  LG(LS(3))          // screenshot window
-#define SCSH_R      &kp  LG(LS(4))          // screenshot region
-#define SCSH_A      &kp  LG(LS(5))          // screenshot with annotation
+#define SCSH_W      &kp  LA(LS(3))          // screenshot window
+#define SCSH_R      &kp  LA(LS(4))          // screenshot region
+#define SCSH_A      &kp  LA(LS(5))          // screenshot with annotation
 
 /* Keymap */
 
@@ -264,7 +265,7 @@ ZMK_BASE_LAYER(Nav,
 ZMK_BASE_LAYER(Fn,
     ___           &kp F8        &kp F7        &kp F6         &kp F5        ___         ,   &kp C_VOL_UP    &kp F1        &kp F2        &kp F3        &kp F4     ___     ,
     ___           &hml LGUI F12 &hml LALT F11 &hml LSHFT F10 &hml LCTRL F9 ___         ,   &kp C_PP        DSK_PREV      DSK_SCRATCH   DSK_NEXT      DSK_CLOSE  ___     ,
-    ___           ___           SCSH_A        SCSH_R         SCSH_W        ___         ,   &kp C_VOL_DN    SPLIT         FLOATING      ___           ___        ___     ,
+    ___           ___           SCSH_A        SCSH_R         SCSH_W        ___         ,   &kp C_VOL_DN    SPLIT         FLOATING      MINIM         ___        ___     ,
                                 ___           ___            ___           ___         ,   &kp C_MUTE      &kp C_NEXT    ___           ___
 )
 
