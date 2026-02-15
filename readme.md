@@ -1,4 +1,9 @@
+# urob's zmk-config for fuji44 by oumae: Colemak-DH
+
+Original readme follows:
+
 # urob's zmk-config
+
 
 This is my personal [ZMK firmware](https://github.com/zmkfirmware/zmk/)
 configuration. It consists of a 34-keys base layout that is re-used for various
