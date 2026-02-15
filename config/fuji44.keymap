@@ -228,9 +228,6 @@ ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
 #define DSK_NEXT    &hmr LALT LG(LS(RIGHT)) // Next     workspace.
 #define DSK_SCRATCH &hmr RSHIFT LG(S)
 #define DSK_CLOSE   &kp  LG(X)
-#define TERM        &kp  LG(Q)
-#define BROWSER     &kp  LG(W)
-#define FILES       &kp  LG(E)
 
 /* Keymap */
 
@@ -242,10 +239,10 @@ ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS) // FN + NUM --> SYS.
 #endif
 
 ZMK_BASE_LAYER(Base,
-  &kp ESC     &kp Q         &kp W         &kp F         &kp P         &kp B       ,   &kp J         &kp L         &kp U         &kp Y         &kp SQT     &kp GRAVE ,
-  &kp LCTRL   &hml LGUI A   &hml LALT R   &hml LSHFT S  &hml LCTRL T  &kp G       ,   &kp M         &hmr LCTRL N  &hmr RSHFT E  &hmr LALT I   &hmr LGUI O &kp RCTRL ,
-  &kp LSHIFT  &kp Z         &kp X         &kp C         &kp D         &kp V       ,   &kp K         &kp H         &comma_morph  &dot_morph    &qexcl      &kp RSHIFT ,
-                        &kp LEFT_BRACKET  &kp LGUI      &lt_spc NAV 0 &lt FN RET  ,   SMART_NUM     MAGIC_SHIFT   &smart_mouse  &kp RIGHT_BRACKET
+  &kp ESC     &kp Q         &kp W         &kp F         &kp P         &kp B       ,   &kp J         &kp L         &kp U         &kp Y         &kp SQT     &kp DEL ,
+  &kp LCTRL   &hml LGUI A   &hml LALT R   &hml LSHFT S  &hml LCTRL T  &kp G       ,   &kp M         &hmr LCTRL N  &hmr RSHFT E  &hmr LALT I   &hmr LGUI O &kp BSPC ,
+  &kp LSHIFT  &kp Z         &kp X         &kp C         &kp D         &kp V       ,   &kp K         &kp H         &comma_morph  &dot_morph    &qexcl      &kp GRAVE ,
+                        	&kp LG(M)     &kp LGUI      &lt_spc NAV 0 &lt FN RET  ,   SMART_NUM     MAGIC_SHIFT   &smart_mouse  &kp LG(S)
 )
 
 ZMK_BASE_LAYER(Nav,
@@ -256,7 +253,7 @@ ZMK_BASE_LAYER(Nav,
 )
 
 ZMK_BASE_LAYER(Fn,
-    ___           &kp F12       &kp F7        &kp F8        &kp F9        ___         ,   &kp C_VOL_UP    TERM          BROWSER       FILES         ___        ___     ,
+    ___           &kp F12       &kp F7        &kp F8        &kp F9        ___         ,   &kp C_VOL_UP    &kp F1        &kp F2        &kp F3        &kp F4     ___     ,
     ___           &hml LGUI F11 &hml LALT F4  &hml LSHFT F5 &hml LCTRL F6 ___         ,   &kp C_NEXT      DSK_PREV      DSK_SCRATCH   DSK_NEXT      DSK_CLOSE  ___     ,
     ___           &kp F10       &kp F1        &kp F2        &kp F3        ___         ,   &kp C_VOL_DN    ___           ___           ___           ___        ___     ,
                                 ___           ___           ___           ___         ,   &kp C_MUTE      &kp C_PP      ___           ___
@@ -277,10 +274,10 @@ ZMK_BASE_LAYER(Sys,
 )
 
 ZMK_BASE_LAYER(Mouse,
-    ___           ___           ___           ___           ___         ,   ___           &kp PG_UP     U_MS_U         &kp PG_DN    ___         ,
-    ___           ___           ___           ___           ___         ,   U_WH_L        U_MS_L        U_MS_D         U_MS_R       U_WH_R      ,
-    ___           ___           ___           ___           ___         ,   ___           &mkp LCLK     &mkp MCLK      &mkp RCLK    ___         ,
-                                              ___           ___         ,   U_WH_U        U_WH_D
+    ___           ___           ___           ___           ___           ___         ,   ___           &kp PG_UP     U_MS_U         &kp PG_DN    ___     ___    ,
+    ___           ___           ___           ___           ___           ___         ,   U_WH_L        U_MS_L        U_MS_D         U_MS_R       U_WH_R  ___    ,
+    ___           ___           ___           ___           ___           ___         ,   ___           &mkp LCLK     &mkp MCLK      &mkp RCLK    ___     ___    ,
+                                ___           ___           ___           ___         ,   U_WH_U        U_WH_D        ___            ___
 )
 
 /* vim: set ft=c tw=146: */
