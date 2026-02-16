@@ -235,9 +235,9 @@ ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
 #define MINIM       &kp  LG(LS(M))          // minimize window
 
 // screenshots (works on mac too)
-#define SCSH_W      &kp  LA(LS(3))          // screenshot window
-#define SCSH_R      &kp  LA(LS(4))          // screenshot region
-#define SCSH_A      &kp  LA(LS(5))          // screenshot with annotation
+#define SCSH_W      &kp  LA(LS(N3))          // screenshot window
+#define SCSH_R      &kp  LA(LS(N4))          // screenshot region
+#define SCSH_A      &kp  LA(LS(N5))          // screenshot with annotation
 
 /* Keymap */
 
@@ -249,9 +249,9 @@ ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS) // FN + NUM --> SYS.
 #endif
 
 ZMK_BASE_LAYER(Base,
-  &kp ESC     &kp B         &kp L         &kp D         &kp W         &kp Z       ,   &kp SQT       &kp F         &kp O         &kp U         &kp J       &kp DEL ,
-  &kp LCTRL   &hml LGUI N   &hml LALT R   &hml LSHFT T  &hml LCTRL S  &kp G       ,   &kp Y         &hmr LCTRL H  &hmr RSHFT A  &hmr LALT E   &hmr LGUI I &kp BSPC ,
-  &kp LSHIFT  &kp Q         &kp X         &kp M         &kp C         &kp V       ,   &kp K         &kp P         &comma_morph  &dot_morph    &qexcl      &kp GRAVE ,
+  &kp ESC     &kp B         &kp L         &kp D         &kp C         &kp V       ,   &kp J         &kp Y         &kp O         &kp U         &kp SQT       &kp DEL ,
+  &kp LCTRL   &hml LGUI N   &hml LALT R   &hml LSHFT T  &hml LCTRL S  &kp G       ,   &kp P         &hmr LCTRL H  &hmr RSHFT A  &hmr LALT E   &hmr LGUI I   &kp BSPC ,
+  &kp LSHIFT  &kp X         &kp Q         &kp M         &kp W         &kp Z       ,   &kp K         &kp F         &comma_morph  &dot_morph    &qexcl        &kp GRAVE ,
                         	&kp F11       &kp LGUI      &lt_spc NAV 0 &lt FN RET  ,   SMART_NUM     MAGIC_SHIFT   &smart_mouse  &kp F12
 )
 

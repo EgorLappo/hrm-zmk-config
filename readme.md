@@ -1,4 +1,4 @@
-# graphite mod of urob's zmk-config
+# gallium mod of urob's zmk-config
 
 designed for fuji44 by oumae.
 
